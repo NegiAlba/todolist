@@ -18,6 +18,7 @@
 
 Tables
 
+```
 **user**
 id INT NOT NULL PRIMARY KEY AUTO_INCREMENT
 username VARCHAR (25) NOT NULL
@@ -25,7 +26,9 @@ password VARCHAR (255) NOT NULL
 email VARCHAR (255) NOT NULL
 secret_phrase VARCHAR (255) NOT NULL
 role BOOLEAN NOT NULL DEFAULT 1
+```
 
+```
 **task**
 task_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT
 author_id INT NOT NULL
@@ -37,10 +40,13 @@ deadline DATETIME
 status INT NOT NULL
 FOREIGN KEY author_id REFERENCES user(id)
 FOREIGN KEY status REFERENCES status(status_id)
+```
 
+```
 **status**
 status_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT
 label VARCHAR (100) NOT NULL
+```
 
 ### SQL DATABASE/TABLES CREATION (see db.sql, also on gist)
 [Link to DB.sql](https://gist.github.com/NegiAlba/ce3c1a46b72314e6947a4792bfee81c0)
