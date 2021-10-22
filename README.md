@@ -42,4 +42,7 @@ FOREIGN KEY status REFERENCES status(status_id)
 status_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT
 label VARCHAR (100) NOT NULL
 
-### SQL DATABASE/TABLES CREATION (see db.sql)
+### SQL DATABASE/TABLES CREATION (see db.sql, also on gist)
+[Link to DB.sql](https://gist.github.com/NegiAlba/ce3c1a46b72314e6947a4792bfee81c0)
+
+

@@ -24,7 +24,13 @@ CREATE TABLE task (
     created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(),
     updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(),
     deadline DATETIME,
-    status_id INT NOT NULL,
+    status_id INT NOT NULL DEFAULT 4,
     FOREIGN KEY (author_id) REFERENCES user(id),
     FOREIGN KEY (status_id) REFERENCES status(status_id)
 );
+
+INSERT INTO status(label) VALUES
+('Success'),
+('Late'),
+('Aborted'),
+('Work in progress');
