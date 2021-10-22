@@ -16,11 +16,12 @@
             $password2 = htmlspecialchars($_POST['password2']);
 
             //! Si l'adresse e-mail ou l'username existe déja dans la BDD
-            $verifMail = "SELECT * FROM user WHERE email = $email";
-            $verifUsername = "SELECT * FROM user WHERE username = $username";
+            $verifMail = "SELECT * FROM user WHERE email = '{$email}'";
+            $verifUsername = "SELECT * FROM user WHERE username = '{$username}'";
             $resultVerifMail = $connection->query($verifMail)->fetchColumn();
             //! S'il l'adresse n'a pas été utilisée on vérifie l'username
-            if (!$resultVerifMail) {
+            //? Ajout d'un filtre de validation de l'email
+            if (filter_var($email, FILTER_VALIDATE_EMAIL) && !$resultVerifMail) {
                 //! S'il l'username n'a pas été utilisé
                 $resultVerifUsername = $connection->query($verifUsername)->fetchColumn();
                 if (!$resultVerifUsername) {
@@ -36,15 +37,51 @@
                         $sth->execute();
 
                         echo 'Tout va bien';
+                    } else {
+                        //? Oubli des else pour les messages d'erreur
+                        echo '<div>Mots de passes différents</div>';
+                        unset($_POST);
                     }
-                    echo 'Mots de passes différents';
+                } else {
+                    //? Oubli des else pour les messages d'erreur
+                    echo '<div>username existe</div>';
+                    unset($_POST);
                 }
-                echo ' username existe';
+            } else {
+                //? Oubli des else pour les messages d'erreur
+                echo '<div>mail existe</div>';
+                unset($_POST);
             }
-            echo 'mail existe';
+        } else {
+            //? Oubli des else pour les messages d'erreur
+            echo '<div>Des champs sont vides</div>';
+            unset($_POST);
         }
-        echo 'des champs sont vides';
     }
+
+/*
+ * ! Etapes logiques de l'inscription
+ *
+ *  TODO Vérification intro
+ *
+ *  TODO : Initialisation variables
+ *
+ *  TODO Verification email : Nécessaire et intéressant, pas sûr qu'on le mette en place pour l'instant
+ *
+ *  TODO Vérification email dans la BDD : Pour que l'email ne soit pas existant
+ *
+ *  TODO Vérification username dans la BDD : Pour que l'username ne soit pas existant
+ *
+ *  TODO Vérification mdp : Concordance password
+ *
+ *  TODO Hashage du mdp : Crypter le mot de passe
+ *
+ *  TODO Enregistrement données utilisateur
+ *
+ *  TODO Assainissement des variables
+ *
+ *  TODO Message d'erreur
+ */
 
 ?>
     <form action="" method="post">

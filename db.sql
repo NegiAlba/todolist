@@ -6,7 +6,7 @@ CREATE TABLE user (
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     username VARCHAR (25) NOT NULL,
     password VARCHAR (255) NOT NULL,
-    email VARCHAR (255) NOT NULL,
+    email VARCHAR (255) NOT NULL UNIQUE,
     secret_phrase VARCHAR (255) NOT NULL,
     role BOOLEAN NOT NULL DEFAULT 1
 );
