@@ -19,9 +19,6 @@
 
             //? Si ma requête a pu être effectuée, alors crée une variable $userInfos avec les infos
             if ($userInfos = $getUser->fetch()) {
-                echo '<pre>';
-                print_r($userInfos);
-                echo '</pre>';
 
                 if (password_verify($password, $userInfos['password'])) {
                     $_SESSION['id'] = $userInfos['id'];
