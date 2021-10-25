@@ -51,4 +51,12 @@ label VARCHAR (100) NOT NULL
 ### SQL DATABASE/TABLES CREATION (see db.sql, also on gist)
 [Link to DB.sql](https://gist.github.com/NegiAlba/ce3c1a46b72314e6947a4792bfee81c0)
 
+# ENVIRONMENT VARIABLES
 
+Ne pas oublier de créer vos variables d'environnement. Elles sont contenus dans un fichier `dev.env.php` au format :
+
+```
+    const DB_HOST = 'mysql:host=HOST;dbname=NOM_BDD;charset=CHARSET';
+    const DB_USER = 'USER';
+    const DB_PASS = 'PASSWORD';
+```
