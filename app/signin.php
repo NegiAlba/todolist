@@ -2,9 +2,6 @@
 
     require 'includes/header.php';
 
-    var_dump(session_id());
-    var_dump($_SESSION['id']);
-
     //! Si le bouton submit a été cliqué
     if (!empty($_POST)) {
         //! Si tous les champs ont été remplis
@@ -30,8 +27,6 @@
                     $_SESSION['id'] = $userInfos['id'];
                     $_SESSION['username'] = $userInfos['username'];
                     $_SESSION['email'] = $userInfos['email'];
-
-                    var_dump($_SESSION);
                 } //! Rajouter messages d'erreur
             }
         } else {
