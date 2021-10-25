@@ -2,6 +2,9 @@
 
     require 'includes/header.php';
 
+    var_dump(session_id());
+    var_dump($_SESSION['id']);
+
     //! Si le bouton submit a été cliqué
     if (!empty($_POST)) {
         //! Si tous les champs ont été remplis
@@ -9,6 +12,28 @@
             //! Assainissement des variables
             $email = htmlspecialchars($_POST['email']);
             $password = htmlspecialchars($_POST['password']);
+
+            //! Shit is getting real
+            //? Requete SQL pour répurer la ligne qui correspond à l'email
+            $getRowByEmail = "SELECT * FROM user WHERE email = '{$email}'";
+
+            //? Lancement de ma requête
+            $getUser = $connection->query($getRowByEmail);
+
+            //? Si ma requête a pu être effectuée, alors crée une variable $userInfos avec les infos
+            if ($userInfos = $getUser->fetch()) {
+                echo '<pre>';
+                print_r($userInfos);
+                echo '</pre>';
+
+                if (password_verify($password, $userInfos['password'])) {
+                    $_SESSION['id'] = $userInfos['id'];
+                    $_SESSION['username'] = $userInfos['username'];
+                    $_SESSION['email'] = $userInfos['email'];
+
+                    var_dump($_SESSION);
+                } //! Rajouter messages d'erreur
+            }
         } else {
             //? Oubli des else pour les messages d'erreur
             echo '<div class="alert alert-warning" role="alert">
@@ -27,20 +52,13 @@
  *
  *  TODO Assainissement des variables
  *
- *  TODO Vérification email dans la BDD : Pour que l'email ne soit pas existante
+ *  TODO Vérification email dans la BDD : Pour vérifier que l'email existe et connecter l'user à son compte
  *
- *  TODO Verification email avec filter_var($email, FILTER_VALIDATE_EMAIL)
+ *  TODO Vérification mdp : Concordance password avec celui de la BDD (password_verify)
  *
- *  TODO Vérification username dans la BDD : Pour que l'username ne soit pas existant
+ *  TODO Enregistrement d'une session pour l'utilisateur
  *
- *  TODO Vérification mdp : Concordance password
- *
- *  TODO Hashage du mdp : Crypter le mot de passe
- *
- *  TODO Enregistrement données utilisateur
- *
- *
- *  TODO Message d'erreur
+ *  TODO Messages d'erreur
  */
 ?>
 
