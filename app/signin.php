@@ -58,12 +58,8 @@
             <label for="floatingInput">Your beautiful email address 🌹</label>
           </div>
           <div class="form-floating mb-3">
-            <input type="text" class="form-control" name="username" id="floatingInput" placeholder="JohnRambo">
-            <label for="floatingInput">A unique username ✨</label>
-          </div>
-          <div class="form-floating mb-3">
             <input type="password" class="form-control" name="password" id="floatingPassword" placeholder="Password">
-            <label for="floatingPassword">A strong password ! ⛔</label>
+            <label for="floatingPassword">Your very own password ! ⛔</label>
           </div>
           <button class="w-100 btn btn-lg btn-primary" type="submit">Log In 🖌</button>
         </form>
