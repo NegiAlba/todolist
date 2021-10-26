@@ -10,7 +10,7 @@
             $email = htmlspecialchars($_POST['email']);
             $password = htmlspecialchars($_POST['password']);
 
-            //! Shit is getting real
+            //! Shit is getting real : Début de la requête de vérification de l'email
             //? Requete SQL pour répurer la ligne qui correspond à l'email
             $getRowByEmail = "SELECT * FROM user WHERE email = '{$email}'";
 
@@ -19,6 +19,9 @@
 
             //? Si ma requête a pu être effectuée, alors crée une variable $userInfos avec les infos
             if ($userInfos = $getUser->fetch()) {
+                echo '<pre>';
+                print_r($userInfos);
+                echo '</pre>';
 
                 if (password_verify($password, $userInfos['password'])) {
                     $_SESSION['id'] = $userInfos['id'];
