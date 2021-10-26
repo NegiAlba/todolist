@@ -1,5 +1,7 @@
 <?php
 
+require '../dev.env.php';
+
 //Utilisation d'un bloc try-catch pour capturer les erreurs de connexion
 try {
     // Connexion à la BDD via PDO

@@ -1,5 +1,4 @@
 <?php
-    require '../dev.env.php';
     require 'includes/config.php';
 ?>
 
