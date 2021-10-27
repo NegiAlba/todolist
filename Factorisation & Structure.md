@@ -1,6 +1,6 @@
 # Factorisation d'un projet procédural
 
-La factorisation d'un projet procédural passe par plusieurs réflexions et pose la question de l'abstraction de notre code. Factoriser ne va pas simplement abréger les noms des variables et autres parties superflues, mais va accorder une importance particulère à l'abstraction et le fait de rendr ele cocde "générique".
+La factorisation d'un projet procédural passe par plusieurs réflexions et pose la question de l'abstraction de notre code. Factoriser ne va pas simplement abréger les noms des variables et autres parties superflues, mais va accorder une importance particulère à l'abstraction et le fait de rendre le code "générique".
 
 ## Qu'est-ce que l'abstraction ?
 
