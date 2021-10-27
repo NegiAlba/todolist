@@ -1,6 +1,6 @@
 # Factorisation d'un projet procédural
 
-La factorisation d'un projet procédural passe par plusieurs réflexions et pose la question de l'abstraction de notre code. Factoriser ne va pas simplement abréger les noms des variables et autres parties superflues, mais va accorder une importance particulère à l'abstraction et le fait de rendr ele cocde "générique".
+La factorisation d'un projet procédural passe par plusieurs réflexions et pose la question de l'abstraction de notre code. Factoriser ne va pas simplement abréger les noms des variables et autres parties superflues, mais va accorder une importance particulère à l'abstraction et le fait de rendre le code "générique".
 
 ## Qu'est-ce que l'abstraction ?
 
@@ -12,7 +12,7 @@ Pour le rendre abstrait il faudra supprimer toutes les valeurs en "dur" et les r
 Il faut se poser la question de structuration.
 Si l'on veut factoriser il faut "nettoyer" le code en profondeur et cela passe par la structuration.
 
-** Il n'y a pas qu'une seule façon de faire ** et par conséquent je préfère proposer une liste de recommendations.
+**Il n'y a pas qu'une seule façon de faire** et par conséquent je préfère proposer une liste de recommendations.
 
 ### Structuration
 
@@ -30,7 +30,7 @@ Il existe d'autres recommendations mais elles ne s'appliqueront pas à votre cha
 
 De notre côté la factorisation et structuration aura entrâiné certaines modifications :
 
-- Dossier app/ à la racine du projet : ** C'était déja le cas**
+- Dossier app/ à la racine du projet : **C'était déja le cas**
 
 - Dossier séparé pour le code source, et un fichier public pour les fichiers servis (src/ et public/) : **Pas le cas ici, donc pas besoin**
 
