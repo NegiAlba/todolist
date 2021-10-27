@@ -30,7 +30,7 @@ Il existe d'autres recommendations mais elles ne s'appliqueront pas à votre cha
 
 De notre côté la factorisation et structuration aura entrâiné certaines modifications :
 
-- Dossier app/ à la racine du projet : ** C'était déja le cas**
+- Dossier app/ à la racine du projet : **C'était déja le cas**
 
 - Dossier séparé pour le code source, et un fichier public pour les fichiers servis (src/ et public/) : **Pas le cas ici, donc pas besoin**
 
