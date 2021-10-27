@@ -12,7 +12,7 @@ Pour le rendre abstrait il faudra supprimer toutes les valeurs en "dur" et les r
 Il faut se poser la question de structuration.
 Si l'on veut factoriser il faut "nettoyer" le code en profondeur et cela passe par la structuration.
 
-** Il n'y a pas qu'une seule façon de faire ** et par conséquent je préfère proposer une liste de recommendations.
+**Il n'y a pas qu'une seule façon de faire** et par conséquent je préfère proposer une liste de recommendations.
 
 ### Structuration
 
