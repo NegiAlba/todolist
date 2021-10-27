@@ -43,11 +43,13 @@
                     foreach ($displayTasksData as $task) {
                         ?>
                             <tr>
-                                <th scope="row"><?php echo $task['task_id']; ?></th>
-                                <td><?php echo $task['title']; ?></td>
-                                <td><?php echo $task['description']; ?></td>
-                                <td><?php echo $task['label']; ?></td>
-                                <td><?php echo $task['deadline']; ?></td>
+                                <form action="" method="post">
+                                    <th scope="row"><?php echo $task['task_id']; ?></th>
+                                    <td><input type="text" name="title" id="" value="<?php echo $task['title']; ?>"></td>
+                                    <td><?php echo $task['description']; ?></td>
+                                    <td><?php echo $task['label']; ?></td>
+                                    <td><?php echo $task['deadline']; ?></td>
+                                </form>
                             </tr>
                         <?php
                     }

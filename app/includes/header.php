@@ -51,7 +51,7 @@
           <?php
               if (!empty($_SESSION)) {
                   ?>
-                  <a href="" class="btn btn-outline-primary me-2"><?php echo $_SESSION['username']; ?></a>
+                  <a href="profile.php" class="btn btn-outline-primary me-2"><?php echo $_SESSION['username']; ?></a>
                   <a href="?logout" class="btn btn-outline-primary me-2">Disconnect</a>
                   <?php
               } else {
