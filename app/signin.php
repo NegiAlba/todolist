@@ -29,7 +29,7 @@
         <p class="col-lg-10 fs-4">Front-end Snippet is from Twitter Bootstrap ©. Using PHP to log in via PDO and processing post infos.</p>
       </div>
       <div class="col-md-10 mx-auto col-lg-5">
-        <form action="signin_post.php" method="POST" class="p-4 p-md-5 border rounded-3 bg-light">
+        <form action="user_process.php" method="POST" class="p-4 p-md-5 border rounded-3 bg-light">
           <div class="form-floating mb-3">
             <input type="email" class="form-control" name="email" id="floatingInput" placeholder="name@example.com">
             <label for="floatingInput">Your beautiful email address 🌹</label>
@@ -38,7 +38,7 @@
             <input type="password" class="form-control" name="password" id="floatingPassword" placeholder="Password">
             <label for="floatingPassword">Your very own password ! ⛔</label>
           </div>
-          <button class="w-100 btn btn-lg btn-primary" type="submit">Log In 🖌</button>
+          <button class="w-100 btn btn-lg btn-primary" type="submit" name="login_post" value="1">Log In 🖌</button>
         </form>
       </div>
     </div>
