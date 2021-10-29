@@ -30,11 +30,19 @@
      }
 
      if (isset($_GET['s'])) {
-         echo '<div class="alert alert-success" role="alert"> Tâche insérée </div>';
+         echo '<div class="alert alert-success" role="alert"> Tâche insérée !</div>';
      }
 
-     if (isset($_POST['e'])) {
+     if (isset($_GET['e'])) {
          echo '<div class="alert alert-danger" role="alert"> Une erreur s\'est glissée dans le formulaire </div>';
+     }
+
+     if (isset($_GET['u1'])) {
+         echo '<div class="alert alert-warning" role="alert"> Votre tâche n\'a pas pu être mise à jour </div>';
+     }
+
+     if (isset($_GET['u2'])) {
+         echo '<div class="alert alert-success" role="alert"> Tâche mise à jour ! </div>';
      }
 ?>
 

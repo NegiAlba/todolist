@@ -36,6 +36,8 @@
                     <th scope="col"> Description</th>
                     <th scope="col"> Status</th>
                     <th scope="col"> Deadline</th>
+                    <th scope="col"> Edit</th>
+                    <th scope="col"> Delete</th>
                 </tr>
             </thead>
             <tbody>
@@ -43,12 +45,28 @@
                     foreach ($displayTasksData as $task) {
                         ?>
                             <tr>
-                                <form action="" method="post">
-                                    <th scope="row"><?php echo $task['task_id']; ?></th>
-                                    <td><input type="text" name="title" id="" value="<?php echo $task['title']; ?>"></td>
-                                    <td><?php echo $task['description']; ?></td>
-                                    <td><?php echo $task['label']; ?></td>
-                                    <td><?php echo $task['deadline']; ?></td>
+                                <form action="todolist_post.php" method="post">
+                                    <th scope="row" class="lead"><input name="task_id" class="form-control-plaintext text-white" type="text" value="<?php echo $task['task_id']; ?>" readonly></th>
+                                    <td><input type="text" name="title" id="" class="form-control" value="<?php echo $task['title']; ?>"></td>
+                                    <td><input type="text" name="description" id="" class="form-control" value="<?php echo $task['description']; ?>"></td>
+                                    <td>
+                                        <select class="form-select" id="autoSizingSelect" name="status">
+                                            <!-- Afficher ici mes status de manière dynamique -->
+                                            <!-- <option value="<?php echo $task['status_id']; ?>" selected>-- Current : <?php echo $task['label']; ?>--</option> -->
+                                            <?php
+                                                foreach ($selectStatusData as $data) {
+                                                ?>
+                                                    <option value="<?= $data['status_id']; ?>" <?= $data['status_id'] === $task['status_id'] ? 'selected' : '' ?> >
+                                                        <?=$data['label'];?>
+                                                    </option>
+                                                <?php
+                                            } ?>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input type="datetime-local" name="deadline" id="" class="form-control" value="<?php echo date('Y-m-d\TH:i:s', strtotime($task['deadline'])) ?>">
+                                    </td>
+                                    <td><button type="submit" class="btn btn-warning" name="edit_post"><i class="fas fa-pen"></i></button></td>
                                 </form>
                             </tr>
                         <?php
