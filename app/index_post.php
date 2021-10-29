@@ -23,7 +23,7 @@ if (!empty($_POST['task'])) {
     $status = empty($_POST['status']) ? 4 : htmlspecialchars($_POST['status']);
 
     //* Condition ternaire + fonction date sur laquelle j'effectue une opération d'ajout d'heures
-    $deadline = empty($_POST['deadline']) ? date('d-m-Y H:i:s', strtotime('+1 day')) : date('Y-m-d H:i:s', strtotime($_POST['deadline']));
+    $deadline = empty($_POST['deadline']) ? date('Y-m-d H:i:s', strtotime('+1 day')) : date('Y-m-d H:i:s', strtotime($_POST['deadline']));
 
     //  $created_at = date('d-m-Y H:i:s');
 

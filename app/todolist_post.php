@@ -36,4 +36,28 @@
             }
         }
     }
+
+    if(isset($_POST['delete_post'])){
+        //? Vérification de l'existence des tokens
+        if(isset($_SESSION['token']) && isset($_POST['csrf_token'])){
+            if($_SESSION['token'] == $_POST['csrf_token']){
+
+                $task_id = htmlspecialchars($_POST['task_id']);
+                $author_id = $_SESSION['id'];
+
+                $deleteSql = "DELETE FROM task WHERE task_id = :task_id AND author_id =:author_id";
+
+                $deleteReq = $connection->prepare($deleteSql);
+
+                $deleteReq->bindValue(':task_id', $task_id);
+                $deleteReq->bindValue(':author_id', $author_id);
+
+                if($deleteReq->execute()){
+                    header('Location:index.php?d2');
+                }else{
+                    header('Location:index.php?d1');
+                }
+            }
+        }
+    }
 ?>

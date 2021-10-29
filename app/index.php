@@ -44,6 +44,14 @@
      if (isset($_GET['u2'])) {
          echo '<div class="alert alert-success" role="alert"> Tâche mise à jour ! </div>';
      }
+
+     if (isset($_GET['d1'])) {
+         echo '<div class="alert alert-warning" role="alert"> Votre tâche n\'a pas pu être supprimée </div>';
+     }
+
+     if (isset($_GET['d2'])) {
+         echo '<div class="alert alert-danger" role="alert"> Tâche supprimée </div>';
+     }
 ?>
 
 <div class="container">

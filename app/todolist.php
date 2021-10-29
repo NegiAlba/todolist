@@ -68,6 +68,11 @@
                                     </td>
                                     <td><button type="submit" class="btn btn-warning" name="edit_post"><i class="fas fa-pen"></i></button></td>
                                 </form>
+                                <form action="todolist_post.php" method="post">
+                                    <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['token'] ?>">
+                                    <input type="hidden" name="task_id" value="<?php echo $task['task_id']; ?>">
+                                    <td><button type="submit" class="btn btn-danger" name="delete_post"><i class="fas fa-trash"></i></button></td>
+                                </form>
                             </tr>
                         <?php
                     }
